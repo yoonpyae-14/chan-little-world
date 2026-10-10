@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff1f6">
+<title>For Aye Chan Myat Mon Oo 🤍</title>
+<style>
+:root{--rose:#d96d91;--ink:#5a4350;--cream:#fffafd}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;overflow-x:hidden;font-family:"Trebuchet MS",Arial,sans-serif;color:var(--ink);background:radial-gradient(circle at 10% 5%,#ffe0ec,transparent 35%),radial-gradient(circle at 90% 95%,#e9e2ff,transparent 38%),var(--cream)}
+.sparkle{position:fixed;pointer-events:none;opacity:.65;animation:float 7s ease-in-out infinite;z-index:0}
+@keyframes float{50%{transform:translateY(-17px) rotate(12deg)}}
+.wrap{position:relative;z-index:1;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:22px 13px}
+.card{width:min(100%,540px);padding:clamp(23px,6vw,40px) clamp(18px,5vw,34px);text-align:center;border:1px solid #f0d4df;border-radius:29px;background:#ffffffdc;box-shadow:0 18px 55px #b4678520;backdrop-filter:blur(9px);animation:appear .6s ease both}
+@keyframes appear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:.7rem;color:#b56b86;margin-bottom:12px}
+h1{font-size:clamp(1.65rem,7vw,2.35rem);line-height:1.2;margin:8px 0 16px;color:#a94e73}
+p{font-size:1rem;line-height:1.8;margin:12px 0}.sub{color:#927b86;font-size:.91rem}
+.big{font-size:3.1rem;display:block;margin:4px auto 14px;animation:float 3s ease-in-out infinite}
+input{width:100%;margin:14px 0 10px;padding:15px;border:1px solid #f0c8d6;border-radius:14px;background:#fffafd;font-size:1rem;color:var(--ink);outline:none}
+input:focus{border-color:var(--rose);box-shadow:0 0 0 3px #fbe1ea}
+button{border:0;cursor:pointer;border-radius:999px;padding:13px 21px;margin:7px 4px;font-size:.95rem;font-weight:700;color:white;background:linear-gradient(135deg,#e58cac,#cb6b91);box-shadow:0 7px 18px #d96d9128;transition:transform .2s}
+button:hover{transform:translateY(-2px)}button.secondary{color:#a75a78;background:#fff0f5;box-shadow:none;border:1px solid #f4d2df}
+.hidden{display:none!important}.dots{display:flex;justify-content:center;gap:6px;margin:18px 0 0}
+.dot{width:6px;height:6px;border-radius:50%;background:#f0d4df}.dot.active{background:#d96d91;width:18px;border-radius:10px}
+.envelope{font-size:5rem;border:0;background:transparent;box-shadow:none;padding:10px}
+.letter{text-align:left;padding:19px;border-radius:19px;background:linear-gradient(145deg,#fff7fa,#fff);border:1px solid #f3d8e2}
+.letter p{font-size:.96rem}.signature{text-align:right;color:#b05d7e;font-weight:bold;margin-top:18px}
+.tiny{font-size:.79rem;color:#a28b96;margin-top:18px}.nope{font-size:.9rem;color:#aa6a83;min-height:22px}
+.heart{position:fixed;bottom:-30px;z-index:2;pointer-events:none;animation:rise 4.5s linear forwards}
+@keyframes rise{to{transform:translateY(-110vh) rotate(30deg);opacity:0}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div class="sparkle" style="top:8%;left:8%;font-size:22px">✦</div><div class="sparkle" style="top:18%;right:9%;font-size:20px;animation-delay:-2s">♡</div><div class="sparkle" style="bottom:12%;left:12%;font-size:24px;animation-delay:-4s">✧</div><div class="sparkle" style="bottom:20%;right:8%;font-size:20px;animation-delay:-1s">♡</div>
+<main class="wrap"><section class="card">
+<div class="eyebrow">a tiny surprise, made just for you</div>
+<div id="s1"><span class="big">🎁</span><h1>Someone has a little surprise for you</h1><p class="sub">But first… let's make sure it's the right person. 🤍</p><input id="name" placeholder="Enter your name…" autocomplete="off" aria-label="Enter your name"><button onclick="checkName()">Open your surprise ✨</button><p id="nameError" class="nope" aria-live="polite"></p></div>
+<div id="s2" class="hidden"><span class="big">🎂</span><h1>It's you, Aye Chan! 🤍</h1><p>A little birthday surprise made especially for you.</p><p>Will you follow it until the very end?</p><button onclick="go(3)">Of course ♡</button><button class="secondary" onclick="playfulNo()">Hmm, maybe not 🙈</button><p id="noMessage" class="nope"></p></div>
+<div id="s3" class="hidden"><span class="big">🌷</span><h1>Today is all about you</h1><p>I hope today gives you a reason to smile a little wider, and that the year ahead is gentle with your heart.</p><p class="sub">There's a tiny something waiting at each step. ✨</p><button onclick="go(4)">Tap to continue 🤍</button></div>
+<div id="s4" class="hidden"><span class="big">🧸</span><h1>A little reminder</h1><p>Some people come into our lives so naturally, yet somehow make our ordinary days feel a little more special.</p><p>You're one of those people to me. ♡</p><button onclick="go(5)">One more thing…</button></div>
+<div id="s5" class="hidden"><span class="big">🌙</span><h1>A wish for your new chapter</h1><p>May you find the courage to chase your dreams, the strength to get through difficult days, and little moments that remind you how lovely life can be.</p><p>And I hope you always have a reason to smile.</p><button onclick="go(6)">Let's open your wish 💌</button></div>
+<div id="s6" class="hidden"><span class="big">💌</span><h1>There's a wish inside</h1><p>It's a little longer than a text message, so I put it in an envelope just for you.</p><button class="envelope" aria-label="Open birthday letter" onclick="openLetter()">✉️</button><p class="sub">Tap the envelope to open it</p></div>
+<div id="s7" class="hidden"><div class="eyebrow">written just for you</div><h1>Happy Birthday, Aye Chan 🎂</h1><div class="letter">
+<p>Happy Birthday, Aye Chan Myat Mon Oo. 🤍</p>
+<p>I hope this new chapter of your life brings you all the happiness your heart deserves, beautiful memories you'll never forget, and countless little reasons to smile every day. I hope life is kind to you, even on the days when things don't go as planned.</p>
+<p>Honestly, I'm really glad I got to know you. It's funny how some people come into our lives so naturally, yet somehow make our ordinary days feel a little more special. Maybe you don't realize it, but you're one of those people to me.</p>
+<p>I hope you keep chasing your dreams, keep smiling that smile of yours, and never let the world take away the beautiful parts of you. You deserve people who listen to you, support you, and celebrate every little win with you.</p>
+<p>I don't know what the future has planned, but I'm glad our paths have crossed. And even if I don't always say it, there's someone quietly cheering for you and wishing you the very best.</p>
+<p><b>I'm really happy that you exist in my little world. ♡</b></p>
+<p>May your 14th of October be full of warmth, laughter, and moments you'll want to remember. May the year ahead bring you peace, unexpected good things, and all the love you deserve.</p>
+<div class="signature">Happy Birthday, always. 🤍</div></div><button onclick="go(8)">One last little thing…</button></div>
+<div id="s8" class="hidden"><span class="big">🌙🤍</span><h1>Thank you for being you</h1><p>If this little surprise made you smile, then it's already done what I hoped it would.</p><p>Remember that someone is wishing you happiness — today and on all the ordinary days, too.</p><p style="font-size:1.3rem;color:#b05d7e;font-weight:bold">You make my little world brighter. ♡</p><p class="sub">October 14 · Happy Birthday! 🎂✨</p><button onclick="celebrate()">Make a wish ✨</button><p id="finalMsg" class="nope"></p></div>
+<div id="dots" class="dots" aria-hidden="true"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+<p class="tiny">made with a little extra care ♡</p>
+</section></main>
+<script>
+let current=1;
+function showStep(n){document.querySelectorAll('[id^="s"]').forEach(el=>{if(/^s[1-8]$/.test(el.id))el.classList.add('hidden')});document.getElementById('s'+n).classList.remove('hidden');current=n;document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===n-1));if(n>=2)sprinkle(3);window.scrollTo({top:0,behavior:'smooth'})}
+function go(n){showStep(n)}
+function checkName(){let v=document.getElementById('name').value.trim();if(!v){document.getElementById('nameError').textContent='Enter your name first, birthday star. 🤍';return}if(!/aye\\s*chan|chan/i.test(v)){document.getElementById('nameError').textContent='This little surprise was made for Aye Chan. Try again. ♡';return}showStep(2)}
+document.getElementById('name').addEventListener('keydown',e=>{if(e.key==='Enter')checkName()});
+function playfulNo(){document.getElementById('noMessage').textContent='Aww, just one tiny peek? I made it for you. 🥹'}
+function openLetter(){showStep(7);sprinkle(12)}
+function sprinkle(count){const symbols=['♡','💗','✦','✨','🤍'];for(let i=0;i<count;i++){let el=document.createElement('span');el.className='heart';el.textContent=symbols[Math.floor(Math.random()*symbols.length)];el.style.left=(Math.random()*92+4)+'vw';el.style.fontSize=(14+Math.random()*18)+'px';el.style.animationDuration=(3+Math.random()*3)+'s';document.body.appendChild(el);setTimeout(()=>el.remove(),6500)}}
+function celebrate(){sprinkle(28);document.getElementById('finalMsg').textContent='I hope your wish comes true. Happy Birthday, Aye Chan. 🤍'}
+</script>
+</body></html>
